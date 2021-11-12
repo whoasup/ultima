@@ -1,0 +1,63 @@
+.price-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 268px;
+  min-height: 100%;
+
+  &__title {
+    max-width: 168px;
+    margin: 0 0 auto;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__footer::before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 0;
+
+    width: 148px;
+    height: 1px;
+
+    background-color: $color-border-black;
+  }
+
+  &__footer {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0 0;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__subtitle {
+    margin-right: 5px;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    color: $color-basic-blue;
+    text-transform: capitalize;
+
+    &::before {
+      content: "R$ ";
+    }
+
+    &::after {
+      content: "*";
+    }
+  }
+}

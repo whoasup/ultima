@@ -1,0 +1,31 @@
+doctype html
+
+include ../base/data
+include ../base/mixins
+include ../base/header
+
+block variables
+
+html(lang="pt")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="Ultima school")
+
+    link(rel="preload", href="fonts/codec-pro-bold.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/codec-pro-light.woff2", as="font", crossorigin="anonymous")
+
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentPage)
+
+      block main
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

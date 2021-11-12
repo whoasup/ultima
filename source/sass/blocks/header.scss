@@ -1,0 +1,19 @@
+.header {
+  z-index: 10;
+
+  display: flex;
+  width: 100%;
+  margin-bottom: -80px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 10px 0;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+}

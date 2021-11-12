@@ -1,0 +1,51 @@
+mixin header(headerMods, currentPage)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Por que ingressar"
+      },
+      {
+        href: "#",
+        text: "Áreas abordadas"
+      },
+      {
+        href: "#",
+        text: "Para quem é o curso?"
+      },
+      {
+        href: "#",
+        text: "Vantagens do curso"
+      },
+      {
+        href: "#",
+        text: "Conheca seus mentores"
+      },
+      {
+        href: "#",
+        text: "Investimento"
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container
+      .header__wrapper
+        if(currentPage === "main")
+          a.header__logo(aria-label="Main page, Ultima School")
+            img(src="img/sprite/icon-logo.svg" width="100" height="25" alt="Ultima school logo")
+        else
+          a.header__logo(href="index.html", aria-label="Go to main page")
+            img(src="img/sprite/icon-logo.svg" width="100" height="25" alt="Ultima school logo")
+        nav.main-nav
+          button.main-nav__toggle.burger.btn-reset(type="button", aria-label="Main menu toggle", aria-pressed="false")
+            span.burger__icon(aria-hidden="true")
+          .main-nav__menu
+            .main-nav__wrapper
+              .main-nav__content
+                ul.main-nav__list
+                  each link in headerLinks
+                    li.main-nav__item
+                      a.main-nav__link(href=link.href)!= link.text
+
+                a.main-nav__button(href="#") Inscreva-se
+

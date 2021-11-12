@@ -1,0 +1,25 @@
+mixin price-block()
+  .price-block
+    .container
+      .price-block__img
+        +picture('content', 'price-block-img', 'jpg', 560, 298, 'alt')
+
+      .price-block__intro
+        h2.price-block__title!= 'Por que ingressar em '
+          em Ciência de Dados?
+        p.price-block__text A profissão do cientista de dados é uma das mais bem remuneradas do mercado. Ela é responsável por criar modelos que preveem tendências e otimizam processos através de algoritmos como o machine learning.
+        p.price-block__text
+          em Por isso, a ciência de dados é necessária em todos os setores do mercado de trabalho, com demanda constante e aquecida.
+
+      .price-block__footer
+        ul.price-block__list
+          each item in priceBlockItems
+            li.price-block__item
+              .price-item
+                h3.price-item__title!= item.title
+                p.price-item__footer
+                  span.price-item__subtitle salário médio
+                  span.price-item__value!= item.price
+
+        .price-block__note Referência no portal GlassDoor na região de São Paulo
+

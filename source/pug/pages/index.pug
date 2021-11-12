@@ -1,0 +1,14 @@
+extends ../base/layout
+
+block variables
+  - const title = "Ultima"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const footerMods = ""
+  - const currentPage = "main"
+
+block main
+  main.page
+    h1.visually-hidden Ultima School main page
+    +price-block()
